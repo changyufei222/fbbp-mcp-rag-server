@@ -1,0 +1,45 @@
+{
+  "provider_order": [
+    "wsl",
+    "windows"
+  ],
+  "windows": {
+    "attempted": false,
+    "skipped": false,
+    "reason": null
+  },
+  "wsl": {
+    "attempted": true,
+    "reason": null,
+    "init_output": "The files belonging to this database system will be owned by user \"changyufei\".\r\nThis user must also own the server process.\r\n\r\nThe database cluster will be initialized with locale \"C\".\r\nThe default text search configuration will be set to \"english\".\r\n\r\nData page checksums are disabled.\r\n\r\ncreating directory /home/changyufei/fbtp_pg_fresh/data ... ok\r\ncreating subdirectories ... ok\r\nselecting dynamic shared memory implementation ... posix\r\nselecting default max_connections ... 100\r\nselecting default shared_buffers ... 128MB\r\nselecting default time zone ... Asia/Shanghai\r\ncreating configuration files ... ok\r\nrunning bootstrap script ... ok\r\nperforming post-bootstrap initialization ... ok\r\nsyncing data to disk ... ok\r\n\r\nSuccess. You can now start the database server usin<local_path_removed>",
+    "start_output": "waiting for server to start.... done\r\nserver started"
+  },
+  "prepare": "CREATE EXTENSION",
+  "provider_selected": "wsl",
+  "http_job_state": "Running",
+  "http_probe": "GET /mcp -> 406",
+  "smoke_output": "[INFO] Reached limit=1\r\nYou're using a XLMRobertaTokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.\r\n[INFO] Inserted 1 records\r\nYou're using a XLMRobertaTokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.\r\n{\r\n  \"preview_ingest\": {\r\n    \"ok\": true,\r\n    \"tool\": \"preview_ingest\",\r\n    \"contract_version\": \"1.0\",\r\n    \"request\": {\r\n      \"input_path\": \"<local_path_removed>"\r\n    },\r\n    \"result\": {\r\n      \"exists\": true,\r\n      \"is_file\": true,\r\n      \"is_dir\": false,\r\n      \"file_count\": 1,\r\n      \"suffixes\": [\r\n        \".jsonl\"\r\n      ],\r\n      \"total_bytes\": 3579676\r\n    },\r\n    \"provenance\": {\r\n      \"input_path\": \"<local_path_removed>",\r\n      \"dataset_version\": \"unknown\",\r\n      \"runtime_profile\": \"unknown\"\r\n    },\r\n    \"diagnostics\": {},\r\n    \"error\": null\r\n  },\r\n  \"ingest\": {\r\n    \"ok\": true,\r\n    \"tool\": \"ingest_sources\",\r\n    \"contract_version\": \"1.0\",\r\n    \"request\": {\r\n      \"input_path\": \"<local_path_removed>",\r\n      \"limit\": 1,\r\n      \"chunk_size\": 800,\r\n      \"chunk_overlap\": 120,\r\n      \"batch_size\": 64\r\n    },\r\n    \"result\": {\r\n      \"ok\": true,\r\n      \"input_path\": \"<local_path_removed>",\r\n      \"inserted\": 1,\r\n      \"pg_table\": \"rag_documents_bge_m3\"\r\n    },\r\n    \"provenance\": {\r\n      \"input_path\": \"<local_path_removed>",\r\n      \"dataset_version\": \"unknown\",\r\n      \"runtime_profile\": \"unknown\"\r\n    },\r\n    \"diagnostics\": {\r\n      \"latency_ms\": 7102.07,\r\n      \"worker_action\": \"ingest_sources\"\r\n    },\r\n    \"error\": null\r\n  },\r\n  \"health_status\": {\r\n    \"ok\": true,\r\n    \"tool\": \"health_status\",\r\n    \"contract_version\": \"1.0\",\r\n    \"request\": {},\r\n    \"result\": {\r\n      \"runtime\": {\r\n        \"mode\": \"research-dev\",\r\n        \"env_path\": \"<local_path_removed>",\r\n        \"ragkb_status\": \"<local_path_removed>",\r\n        \"candidate_site_packages\": [\r\n          \"<local_path_removed>",\r\n          \"<local_path_removed>",\r\n          \"<local_path_removed>",\r\n          \"<local_path_removed>",\r\n          \"<local_path_removed>",\r\n          \"<local_path_removed>",\r\n          \"<local_path_removed>"\r\n        ],\r\n        \"selected_site_package\": \"<local_path_removed>",\r\n        \"dataset_version\": \"unknown\",\r\n        \"runtime_profile\": \"unknown\"\r\n      },\r\n      \"database\": {\r\n        \"ok\": true,\r\n        \"result\": 1\r\n      },\r\n      \"public_lookups\": {\r\n        \"pubmed\": {\r\n          \"ok\": true,\r\n          \"status\": \"configured\"\r\n        },\r\n        \"uniprot\": {\r\n          \"ok\": true,\r\n          \"status\": \"configured\"\r\n        },\r\n        \"pdb\": {\r\n          \"ok\": true,\r\n          \"status\": \"configured\"\r\n        }\r\n      }\r\n    },\r\n    \"provenance\": {},\r\n    \"diagnostics\": {\r\n      \"latency_ms\": 25.56\r\n    },\r\n    \"error\": null\r\n  },\r\n  \"search\": {\r\n    \"ok\": true,\r\n    \"tool\": \"search_knowledge\",\r\n    \"contract_version\": \"1.0\",\r\n    \"request\": {\r\n      \"query\": \"ITI-D2\",\r\n      \"top_k\": 2,\r\n      \"record_type\": null,\r\n      \"filters\": [],\r\n      \"include_answer\": false,\r\n      \"include_evidence\": false,\r\n      \"answer_mode\": null\r\n    },\r\n    \"result\": {\r\n      \"query\": \"ITI-D2\",\r\n      \"record_type\": null,\r\n      \"filters\": [],\r\n      \"top_k\": 2,\r\n      \"answer\": null,\r\n      \"result_count\": 1,\r\n      \"results\": [\r\n        {\r\n          \"source\": \"protein_cards_v2.jsonl\",\r\n          \"chunk_id\": \"protein-v2:PROT-00007\",\r\n          \"score\": 0.7275,\r\n          \"excerpt\": \"Protein Centered Card: ITI-D2\\nIdentity\\n- Protein ID: PROT-00007\\n- Canonical Name: ITI-D2\\n- Organism: Homo sapiens\\n- Sequence: AACNLPIVRGPCIAFFPRWAFDAVKGKCVLFPYGGCQGNGNKFYSEKECREYCGVP\\n- Description: Engineered human-derived kunitz domains that inhibit human neutrophil elastase\\nStructure / Domain Summary\\n- Domain TBP-00007: EPI-HNE-3 | scaffold=kunitz | engineered=Yes\\n- Structure STR-00001: method=n\",\r\n          \"metadata\": {\r\n            \"record_type\": \"jsonl\"\r\n          }\r\n        }\r\n      ]\r\n    },\r\n    \"provenance\": {\r\n      \"record_type\": null,\r\n      \"filter_summary\": [],\r\n      \"answer_mode\": \"openai\",\r\n      \"dataset_version\": \"unknown\",\r\n      \"runtime_profile\": \"unknown\",\r\n      \"retrieval_count\": 1,\r\n      \"sources\": [\r\n        \"protein_cards_v2.jsonl\"\r\n      ]\r\n    },\r\n    \"diagnostics\": {\r\n      \"latency_ms\": 2241.0,\r\n      \"worker_action\": \"search_knowledge\",\r\n      \"cache_enabled\": true\r\n    },\r\n    \"error\": null\r\n  },\r\n  \"chunk\": null\r\n}",
+  "pg_connections": {
+    "LocalAddress": "127.0.0.1",
+    "LocalPort": 5434,
+    "State": 2,
+    "OwningProcess": 18360
+  },
+  "http_connections": [
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 8000,
+      "State": 2,
+      "OwningProcess": 28912
+    },
+    {
+      "LocalAddress": "0.0.0.0",
+      "LocalPort": 8000,
+      "State": 2,
+      "OwningProcess": 32340
+    }
+  ]
+}
+Starting MCP HTTP server
+  MCP: http://127.0.0.1:8000/mcp
+  PG : 127.0.0.1:5434 / ragkb / rag_documents_bge_m3

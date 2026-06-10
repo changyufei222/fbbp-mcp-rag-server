@@ -1,0 +1,34 @@
+{
+  "mcpServers": {
+    "fbbp-rag": {
+      "enabled": true,
+      "type": "stdio",
+      "command": "python",
+      "args": [
+        "-S",
+        "E:/项目/fbbp-mcp-rag-server/server.py"
+      ],
+      "env": {
+        "PGHOST": "127.0.0.1",
+        "PGPORT": "5434",
+        "PGDATABASE": "ragkb",
+        "PGUSER": "ragkb",
+        "PGPASSWORD": "ragkb",
+        "PGTABLE": "rag_documents_bge_m3",
+        "EMBEDDING_PROVIDER": "bge_m3",
+        "ANSWER_MODE": "openai",
+        "RAGKB_SRC_PATH": "G:/项目/llm-rag-knowledge-base/src",
+        "PGCONNECT_TIMEOUT": "5"
+      },
+      "description": "Private FBBP knowledge retrieval over ragkb"
+    }
+  },
+  "skills": {
+    "fbbp-deep-research": {
+      "enabled": true
+    },
+    "fbbp-structured-analysis": {
+      "enabled": true
+    }
+  }
+}

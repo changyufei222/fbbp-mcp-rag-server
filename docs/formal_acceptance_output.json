@@ -1,0 +1,1636 @@
+{
+  "server_status": {
+    "ok": true,
+    "tool": "server_status",
+    "contract_version": "1.1",
+    "request": {},
+    "result": {
+      "status": "ok",
+      "pg_host": "localhost",
+      "pg_port": 5432,
+      "pg_db": "ragkb",
+      "pg_table": "rag_documents_bge_m3",
+      "embedding_provider": "bge_m3",
+      "default_answer_mode": "openai",
+      "db_probe": {
+        "ok": true,
+        "result": 1
+      },
+      "dataset_version": "fbbp_private_v2026_04",
+      "runtime_profile": "local_formal",
+      "formal_db_mode": "reuse_prepared_full_formal_db",
+      "db_identity": "fbbp_formal_pgvector",
+      "build_id": "fbbp-2026-04-formal",
+      "source_registry_version": "2026-04-16"
+    },
+    "provenance": {},
+    "diagnostics": {
+      "latency_ms": 5260.09,
+      "worker_action": "server_status"
+    },
+    "error": null
+  },
+  "health_status": {
+    "ok": true,
+    "tool": "health_status",
+    "contract_version": "1.1",
+    "request": {},
+    "result": {
+      "runtime": {
+        "mode": "research-dev",
+        "env_path": "<local_path_removed>",
+        "ragkb_status": "installed",
+        "candidate_site_packages": [
+          "<local_path_removed>",
+          "<local_path_removed>",
+          "<local_path_removed>",
+          "<local_path_removed>",
+          "<local_path_removed>",
+          "<local_path_removed>",
+          "<local_path_removed>"
+        ],
+        "selected_site_package": "<local_path_removed>",
+        "dataset_version": "fbbp_private_v2026_04",
+        "runtime_profile": "local_formal",
+        "formal_db_mode": "reuse_prepared_full_formal_db",
+        "db_identity": "fbbp_formal_pgvector",
+        "build_id": "fbbp-2026-04-formal",
+        "source_registry_version": "2026-04-16",
+        "source_registry_count": 34
+      },
+      "database": {
+        "ok": true,
+        "result": 1
+      },
+      "public_lookups": {
+        "pubmed": {
+          "ok": true,
+          "status": "configured"
+        },
+        "uniprot": {
+          "ok": true,
+          "status": "configured"
+        },
+        "pdb": {
+          "ok": true,
+          "status": "configured"
+        }
+      }
+    },
+    "provenance": {},
+    "diagnostics": {
+      "latency_ms": 5031.66
+    },
+    "error": null
+  },
+  "list_sources": {
+    "ok": true,
+    "tool": "list_sources",
+    "contract_version": "1.1",
+    "request": {
+      "record_type": null,
+      "limit": 10
+    },
+    "result": {
+      "count": 10,
+      "record_type": null,
+      "sources": [
+        {
+          "source": "plmsearch_results.csv",
+          "record_type": "jsonl",
+          "chunk_count": 38079,
+          "source_category": "structure_screen",
+          "source_description": "Protein language model similarity search outputs for protein rows.",
+          "upstream_pipeline": "normalized.schema_tables.plmsearch_results",
+          "quality_notes": "High-volume computational retrieval table frequently used in provenance inspection.",
+          "owner_table": "plmsearch_results",
+          "registry_status": "registered"
+        },
+        {
+          "source": "loop_annotations.csv",
+          "record_type": "jsonl",
+          "chunk_count": 3383,
+          "source_category": "structure_screen",
+          "source_description": "Loop annotation outputs keyed by protein row identifiers.",
+          "upstream_pipeline": "normalized.schema_tables.loop_annotations",
+          "quality_notes": "Computational loop-annotation table used in provenance-focused reviews.",
+          "owner_table": "loop_annotations",
+          "registry_status": "registered"
+        },
+        {
+          "source": "loop_flexibility_results.csv",
+          "record_type": "jsonl",
+          "chunk_count": 3383,
+          "source_category": "structure_screen",
+          "source_description": "Loop flexibility estimates for protein rows.",
+          "upstream_pipeline": "normalized.schema_tables.loop_flexibility_results",
+          "quality_notes": "Computational flexibility outputs intended for structural interpretation, not direct experimental claims.",
+          "owner_table": "loop_flexibility_results",
+          "registry_status": "registered"
+        },
+        {
+          "source": "affinity_data.csv",
+          "record_type": "jsonl",
+          "chunk_count": 1996,
+          "source_category": "interaction_measurement",
+          "source_description": "Affinity assay rows attached to interaction identifiers.",
+          "upstream_pipeline": "normalized.schema_tables.affinity_data",
+          "quality_notes": "Measured binding values with method and unit context.",
+          "owner_table": "affinity_data",
+          "registry_status": "registered"
+        },
+        {
+          "source": "bcell_epitope_results.csv",
+          "record_type": "jsonl",
+          "chunk_count": 1996,
+          "source_category": "immunogenicity",
+          "source_description": "B-cell epitope predictions and supporting sequence-level annotations.",
+          "upstream_pipeline": "normalized.schema_tables.bcell_epitope_results",
+          "quality_notes": "Sequence-derived computational result table; interpret alongside model assumptions.",
+          "owner_table": "bcell_epitope_results",
+          "registry_status": "registered"
+        },
+        {
+          "source": "cmc_data.csv",
+          "record_type": "jsonl",
+          "chunk_count": 1996,
+          "source_category": "developability",
+          "source_description": "CMC-oriented domain developability descriptors.",
+          "upstream_pipeline": "normalized.schema_tables.cmc_data",
+          "quality_notes": "Formal developability table linked through domain identifiers.",
+          "owner_table": "cmc_data",
+          "registry_status": "registered"
+        },
+        {
+          "source": "developability_results.csv",
+          "record_type": "jsonl",
+          "chunk_count": 1996,
+          "source_category": "developability",
+          "source_description": "Integrated developability summary outputs for FBBP proteins.",
+          "upstream_pipeline": "normalized.schema_tables.developability_results",
+          "quality_notes": "Aggregate computational assessment; review together with source component tables.",
+          "owner_table": "developability_results",
+          "registry_status": "registered"
+        },
+        {
+          "source": "domains.csv",
+          "record_type": "jsonl",
+          "chunk_count": 1996,
+          "source_category": "core_entity",
+          "source_description": "Canonical domain registry connecting proteins, sources, and structures.",
+          "upstream_pipeline": "normalized.schema_tables.domains",
+          "quality_notes": "Core join table for domain-centric retrieval.",
+          "owner_table": "domains",
+          "registry_status": "registered"
+        },
+        {
+          "source": "ecoli_expression_results.csv",
+          "record_type": "jsonl",
+          "chunk_count": 1996,
+          "source_category": "developability",
+          "source_description": "E. coli expression outputs for FBBP proteins.",
+          "upstream_pipeline": "normalized.schema_tables.ecoli_expression_results",
+          "quality_notes": "Experimental expression readout; coverage is narrower than the full protein table.",
+          "owner_table": "ecoli_expression_results",
+          "registry_status": "registered"
+        },
+        {
+          "source": "foldseek_results.csv",
+          "record_type": "jsonl",
+          "chunk_count": 1996,
+          "source_category": "structure_screen",
+          "source_description": "Foldseek-based structural similarity search outputs.",
+          "upstream_pipeline": "normalized.schema_tables.foldseek_results",
+          "quality_notes": "Structure-search results; interpret together with rank and template context.",
+          "owner_table": "foldseek_results",
+          "registry_status": "registered"
+        }
+      ]
+    },
+    "provenance": {
+      "record_type": null,
+      "dataset_version": "fbbp_private_v2026_04",
+      "runtime_profile": "local_formal",
+      "formal_db_mode": "reuse_prepared_full_formal_db",
+      "db_identity": "fbbp_formal_pgvector",
+      "build_id": "fbbp-2026-04-formal",
+      "source_registry_version": "2026-04-16"
+    },
+    "diagnostics": {
+      "latency_ms": 5221.06,
+      "worker_action": "list_sources"
+    },
+    "error": null
+  },
+  "search": {
+    "ok": true,
+    "tool": "search_knowledge",
+    "contract_version": "1.1",
+    "request": {
+      "query": "VEGF_CKP9.63",
+      "top_k": 5,
+      "record_type": null,
+      "filters": [],
+      "include_answer": true,
+      "include_evidence": true,
+      "answer_mode": "extractive"
+    },
+    "result": {
+      "query": "VEGF_CKP9.63",
+      "record_type": null,
+      "filters": [],
+      "top_k": 5,
+      "answer": "Insufficient evidence to answer confidently.\n\nEvidence (Top-K):\n| # | Score | Scaffold | Target | Organism | Source | Identifier | Date |\n|---|---|---|---|---|---|---|---|\n| 1 | 0.350 | knottin |  |  | domains.csv | domains:TBP-00459 |  |\n| 2 | 0.350 |  |  | Ecballium elaterium | protein_cards_v2.jsonl | protein-v2:PROT-00459 |  |\n| 3 | 0.350 | knottin |  | Ecballium elaterium | interaction_cards_v2.jsonl | INT-00146 |  |\n| 4 | 0.303 |  |  |  | plmsearch_results.csv | plmsearch_results:1510 |  |\n| 5 | 0.302 |  |  |  | proteins.csv | proteins:PROT-00101 |  |",
+      "result_count": 5,
+      "results": [
+        {
+          "source": "domains.csv",
+          "chunk_id": "domains:TBP-00459",
+          "score": 0.35,
+          "excerpt": "Table: domains\nPrimary Key: domain_id = TBP-00459\nProtein Id: PROT-00459\nDomain Name: VEGF_CKP9.63\nSequence: GCDVMQPYWGCKQDSDCLAGCVCHWYNSCG\nIs Engineered: Yes\nScaffold Type: knottin\nDevelopment Stage: Unknown",
+          "metadata": {
+            "record_type": "jsonl",
+            "card_type": "raw_row",
+            "table_name": "domains",
+            "primary_key_value": "TBP-00459"
+          },
+          "source_category": "core_entity",
+          "source_description": "Canonical domain registry connecting proteins, sources, and structures.",
+          "upstream_pipeline": "normalized.schema_tables.domains",
+          "quality_notes": "Core join table for domain-centric retrieval.",
+          "owner_table": "domains",
+          "registry_status": "registered"
+        },
+        {
+          "source": "protein_cards_v2.jsonl",
+          "chunk_id": "protein-v2:PROT-00459",
+          "score": 0.35,
+          "excerpt": "Protein Centered Card: Ecballium elaterium trypsin inhibitor EETI-II\nIdentity\n- Protein ID: PROT-00459\n- Canonical Name: Ecballium elaterium trypsin inhibitor EETI-II\n- Organism: Ecballium elaterium\n- Sequence: GCDVMQPYWGCKQDSDCLAGCVCHWYNSCG\n- Description: CYSTINE KNOT SCAFFOLD PLATFORM\nStructure / Domain Summary\n- Domain TBP-00459: VEGF_CKP9.63 | scaffold=knottin | engineered=Yes\n- Structure STR-",
+          "metadata": {
+            "record_type": "jsonl",
+            "card_type": "protein_card_v2",
+            "query_center": "protein",
+            "table_name": "protein_cards_v2",
+            "protein_id": "PROT-00459"
+          },
+          "source_category": "aggregate_jsonl",
+          "source_description": "Protein-level synthesized cards for the v2 FBBP formal build.",
+          "upstream_pipeline": "llm-rag-knowledge-base/data/schema_tables_rag_ready/protein_cards_v2.jsonl",
+          "quality_notes": "Use for high-level protein summaries; underlying evidence should still be traced to table rows when possible.",
+          "owner_table": "protein_cards_v2",
+          "registry_status": "registered"
+        },
+        {
+          "source": "interaction_cards_v2.jsonl",
+          "chunk_id": "interaction-v2:INT-00146",
+          "score": 0.35,
+          "excerpt": "Interaction Centered Card: INT-00146\nIdentity\n- Interaction ID: INT-00146\n- Domain Id: TBP-00459\n- Is Inhibitory: Yes\nProtein Context\n- Canonical Name: Ecballium elaterium trypsin inhibitor EETI-II\n- Organism: Ecballium elaterium\n- Description: CYSTINE KNOT SCAFFOLD PLATFORM\nDomain Context\n- Domain Name: VEGF_CKP9.63\n- Sequence: GCDVMQPYWGCKQDSDCLAGCVCHWYNSCG\n- Is Engineered: Yes\n- Scaffold Type: ",
+          "metadata": {
+            "record_type": "jsonl",
+            "card_type": "interaction_card_v2",
+            "query_center": "interaction",
+            "table_name": "interaction_cards_v2",
+            "protein_id": "PROT-00459",
+            "interaction_id": "INT-00146"
+          },
+          "source_category": "aggregate_jsonl",
+          "source_description": "Interaction-level synthesized cards for the v2 FBBP formal build.",
+          "upstream_pipeline": "llm-rag-knowledge-base/data/schema_tables_rag_ready/interaction_cards_v2.jsonl",
+          "quality_notes": "Use for high-level interaction summaries; underlying evidence should still be traced to table rows when possible.",
+          "owner_table": "interaction_cards_v2",
+          "registry_status": "registered"
+        },
+        {
+          "source": "plmsearch_results.csv",
+          "chunk_id": "plmsearch_results:1510",
+          "score": 0.3029644971426471,
+          "excerpt": "Table: plmsearch_results\nRow: 1510\nProtein Row Id: 103\nStructure Unique Sequence Id: SEQ_747905F623EC\nPlmsearch Query Original: R1056_avimer_SEQ_747905F623EC|avimer|Avimer anti-FGFR1c C2987\nPlmsearch Query Normalized: R1056_avimer_SEQ_747905F623EC|avimer|Avimer_anti-FGFR1c_C2987\nPlmsearch Hit Rank: 8\nPlmsearch Target: Q9VER6\nPlmsearch Score: 0.2092275074696541\nPlmsearch Confidence Level: unsupport",
+          "metadata": {
+            "record_type": "jsonl",
+            "card_type": "raw_row",
+            "table_name": "plmsearch_results"
+          },
+          "source_category": "structure_screen",
+          "source_description": "Protein language model similarity search outputs for protein rows.",
+          "upstream_pipeline": "normalized.schema_tables.plmsearch_results",
+          "quality_notes": "High-volume computational retrieval table frequently used in provenance inspection.",
+          "owner_table": "plmsearch_results",
+          "registry_status": "registered"
+        },
+        {
+          "source": "proteins.csv",
+          "chunk_id": "proteins:PROT-00101",
+          "score": 0.3019442472937656,
+          "excerpt": "Table: proteins\nPrimary Key: protein_id = PROT-00101\nCanonical Name: Avimer anti-FGFR1c/KLB C3201\nSequence: CGADQFRCGNGSCVPRAWRCDGVDDCGDGSDEAPEICETPTCQSNEFRCRSGRCIPQHWLCDGLNDCGDGSDESQQCSAPASEPPGSLCGEGLFTCRSTNICISHAWVCDGVDDCEDNSDENNCSAPASEPPGSL\nDescription: Avimer C3201",
+          "metadata": {
+            "record_type": "jsonl",
+            "card_type": "raw_row",
+            "table_name": "proteins",
+            "primary_key_value": "PROT-00101"
+          },
+          "source_category": "core_entity",
+          "source_description": "Canonical protein entity table for the FBBP corpus.",
+          "upstream_pipeline": "normalized.schema_tables.proteins",
+          "quality_notes": "Primary protein registry table used by many joins.",
+          "owner_table": "proteins",
+          "registry_status": "registered"
+        }
+      ],
+      "evidence": {},
+      "answer_text": "Insufficient evidence to answer confidently.\n\nEvidence (Top-K):\n| # | Score | Scaffold | Target | Organism | Source | Identifier | Date |\n|---|---|---|---|---|---|---|---|\n| 1 | 0.350 | knottin |  |  | domains.csv | domains:TBP-00459 |  |\n| 2 | 0.350 |  |  | Ecballium elaterium | protein_cards_v2.jsonl | protein-v2:PROT-00459 |  |\n| 3 | 0.350 | knottin |  | Ecballium elaterium | interaction_cards_v2.jsonl | INT-00146 |  |\n| 4 | 0.303 |  |  |  | plmsearch_results.csv | plmsearch_results:1510 |  |\n| 5 | 0.302 |  |  |  | proteins.csv | proteins:PROT-00101 |  |",
+      "structured_output": {
+        "summary": "Insufficient evidence to answer confidently.\n\nEvidence (Top-K):\n| # | Score | Scaffold | Target | Organism | Source | Identifier | Date |\n|---|---|---|---|---|---|---|---|\n| 1 | 0.350 | knottin |  |  | domains.csv | domains:TBP-00459 |  |\n| 2 | 0.350 |  |  | Ecballium elaterium | protein_cards_v2.jsonl | protein-v2:PROT-00459 |  |\n| 3 | 0.350 | knottin |  | Ecballium elaterium | interaction_cards_v2.jsonl | INT-00146 |  |\n| 4 | 0.303 |  |  |  | plmsearch_results.csv | plmsearch_results:1510 |  |\n| 5 | 0.302 |  |  |  | proteins.csv | proteins:PROT-00101 |  |",
+        "claims": [
+          {
+            "claim_id": "claim_1",
+            "text": "Insufficient evidence to answer confidently.\n\nEvidence (Top-K):\n| # | Score | Scaffold | Target | Organism | Source | Identifier | Date |\n|---|---|---|---|---|---|---|---|\n| 1 | 0.350 | knottin |  |  | domains.csv | domains:TBP-00459 |  |\n| 2 | 0.350 |  |  | Ecballium elaterium | protein_cards_v2.jsonl | protein-v2:PROT-00459 |  |\n| 3 | 0.350 | knottin |  | Ecballium elaterium | interaction_cards_v2.jsonl | INT-00146 |  |\n| 4 | 0.303 |  |  |  | plmsearch_results.csv | plmsearch_results:1510 |  |\n| 5 | 0.302 |  |  |  | proteins.csv | proteins:PROT-00101 |  |",
+            "support": "retrieved_evidence",
+            "evidence_count": 5
+          }
+        ],
+        "key_findings": [
+          "In the full corpus, the knottin scaffold most often maps to explicit targets such as SCN9A (1).",
+          "Scaffold evidence is dominated by knottin (1).",
+          "Target-focused evidence repeatedly surfaced Q9VER6 (1).",
+          "Cross-table evidence came from domains (1), protein_cards_v2 (1), and interaction_cards_v2 (1)."
+        ],
+        "known_unknowns": [
+          "No publication date surfaced in the current top evidence rows."
+        ],
+        "evidence_rows": [
+          {
+            "source": "domains.csv",
+            "chunk_id": "domains:TBP-00459",
+            "score": 0.35,
+            "excerpt": "Table: domains\nPrimary Key: domain_id = TBP-00459\nProtein Id: PROT-00459\nDomain Name: VEGF_CKP9.63\nSequence: GCDVMQPYWGCKQDSDCLAGCVCHWYNSCG\nIs Engineered: Yes\nScaffold Type: knottin\nDevelopment Stage: Unknown",
+            "metadata": {
+              "record_type": "jsonl",
+              "card_type": "raw_row",
+              "table_name": "domains",
+              "primary_key_value": "TBP-00459"
+            },
+            "source_category": "core_entity",
+            "source_description": "Canonical domain registry connecting proteins, sources, and structures.",
+            "upstream_pipeline": "normalized.schema_tables.domains",
+            "quality_notes": "Core join table for domain-centric retrieval.",
+            "owner_table": "domains"
+          },
+          {
+            "source": "protein_cards_v2.jsonl",
+            "chunk_id": "protein-v2:PROT-00459",
+            "score": 0.35,
+            "excerpt": "Protein Centered Card: Ecballium elaterium trypsin inhibitor EETI-II\nIdentity\n- Protein ID: PROT-00459\n- Canonical Name: Ecballium elaterium trypsin inhibitor EETI-II\n- Organism: Ecballium elaterium\n- Sequence: GCDVMQPYWGCKQDSDCLAGCVCHWYNSCG\n- Description: CYSTINE KNOT SCAFFOLD PLATFORM\nStructure / Domain Summary\n- Domain TBP-00459: VEGF_CKP9.63 | scaffold=knottin | engineered=Yes\n- Structure STR-",
+            "metadata": {
+              "record_type": "jsonl",
+              "card_type": "protein_card_v2",
+              "query_center": "protein",
+              "table_name": "protein_cards_v2",
+              "protein_id": "PROT-00459"
+            },
+            "source_category": "aggregate_jsonl",
+            "source_description": "Protein-level synthesized cards for the v2 FBBP formal build.",
+            "upstream_pipeline": "llm-rag-knowledge-base/data/schema_tables_rag_ready/protein_cards_v2.jsonl",
+            "quality_notes": "Use for high-level protein summaries; underlying evidence should still be traced to table rows when possible.",
+            "owner_table": "protein_cards_v2"
+          },
+          {
+            "source": "interaction_cards_v2.jsonl",
+            "chunk_id": "interaction-v2:INT-00146",
+            "score": 0.35,
+            "excerpt": "Interaction Centered Card: INT-00146\nIdentity\n- Interaction ID: INT-00146\n- Domain Id: TBP-00459\n- Is Inhibitory: Yes\nProtein Context\n- Canonical Name: Ecballium elaterium trypsin inhibitor EETI-II\n- Organism: Ecballium elaterium\n- Description: CYSTINE KNOT SCAFFOLD PLATFORM\nDomain Context\n- Domain Name: VEGF_CKP9.63\n- Sequence: GCDVMQPYWGCKQDSDCLAGCVCHWYNSCG\n- Is Engineered: Yes\n- Scaffold Type: ",
+            "metadata": {
+              "record_type": "jsonl",
+              "card_type": "interaction_card_v2",
+              "query_center": "interaction",
+              "table_name": "interaction_cards_v2",
+              "protein_id": "PROT-00459",
+              "interaction_id": "INT-00146"
+            },
+            "source_category": "aggregate_jsonl",
+            "source_description": "Interaction-level synthesized cards for the v2 FBBP formal build.",
+            "upstream_pipeline": "llm-rag-knowledge-base/data/schema_tables_rag_ready/interaction_cards_v2.jsonl",
+            "quality_notes": "Use for high-level interaction summaries; underlying evidence should still be traced to table rows when possible.",
+            "owner_table": "interaction_cards_v2"
+          },
+          {
+            "source": "plmsearch_results.csv",
+            "chunk_id": "plmsearch_results:1510",
+            "score": 0.3029644971426471,
+            "excerpt": "Table: plmsearch_results\nRow: 1510\nProtein Row Id: 103\nStructure Unique Sequence Id: SEQ_747905F623EC\nPlmsearch Query Original: R1056_avimer_SEQ_747905F623EC|avimer|Avimer anti-FGFR1c C2987\nPlmsearch Query Normalized: R1056_avimer_SEQ_747905F623EC|avimer|Avimer_anti-FGFR1c_C2987\nPlmsearch Hit Rank: 8\nPlmsearch Target: Q9VER6\nPlmsearch Score: 0.2092275074696541\nPlmsearch Confidence Level: unsupport",
+            "metadata": {
+              "record_type": "jsonl",
+              "card_type": "raw_row",
+              "table_name": "plmsearch_results"
+            },
+            "source_category": "structure_screen",
+            "source_description": "Protein language model similarity search outputs for protein rows.",
+            "upstream_pipeline": "normalized.schema_tables.plmsearch_results",
+            "quality_notes": "High-volume computational retrieval table frequently used in provenance inspection.",
+            "owner_table": "plmsearch_results"
+          },
+          {
+            "source": "proteins.csv",
+            "chunk_id": "proteins:PROT-00101",
+            "score": 0.3019442472937656,
+            "excerpt": "Table: proteins\nPrimary Key: protein_id = PROT-00101\nCanonical Name: Avimer anti-FGFR1c/KLB C3201\nSequence: CGADQFRCGNGSCVPRAWRCDGVDDCGDGSDEAPEICETPTCQSNEFRCRSGRCIPQHWLCDGLNDCGDGSDESQQCSAPASEPPGSLCGEGLFTCRSTNICISHAWVCDGVDDCEDNSDENNCSAPASEPPGSL\nDescription: Avimer C3201",
+            "metadata": {
+              "record_type": "jsonl",
+              "card_type": "raw_row",
+              "table_name": "proteins",
+              "primary_key_value": "PROT-00101"
+            },
+            "source_category": "core_entity",
+            "source_description": "Canonical protein entity table for the FBBP corpus.",
+            "upstream_pipeline": "normalized.schema_tables.proteins",
+            "quality_notes": "Primary protein registry table used by many joins.",
+            "owner_table": "proteins"
+          }
+        ],
+        "evidence_table": [
+          {
+            "row_index": 1,
+            "score": 0.35,
+            "scaffold": "knottin",
+            "target": null,
+            "organism": null,
+            "source": "domains.csv",
+            "identifier": null,
+            "publication_date": null,
+            "owner_table": "domains"
+          },
+          {
+            "row_index": 2,
+            "score": 0.35,
+            "scaffold": null,
+            "target": null,
+            "organism": "Ecballium elaterium",
+            "source": "protein_cards_v2.jsonl",
+            "identifier": "PROT-00459",
+            "publication_date": null,
+            "owner_table": "protein_cards_v2"
+          },
+          {
+            "row_index": 3,
+            "score": 0.35,
+            "scaffold": null,
+            "target": null,
+            "organism": "Ecballium elaterium",
+            "source": "interaction_cards_v2.jsonl",
+            "identifier": "INT-00146",
+            "publication_date": null,
+            "owner_table": "interaction_cards_v2"
+          },
+          {
+            "row_index": 4,
+            "score": 0.3029644971426471,
+            "scaffold": null,
+            "target": "Q9VER6",
+            "organism": null,
+            "source": "plmsearch_results.csv",
+            "identifier": null,
+            "publication_date": null,
+            "owner_table": "plmsearch_results"
+          },
+          {
+            "row_index": 5,
+            "score": 0.3019442472937656,
+            "scaffold": null,
+            "target": null,
+            "organism": null,
+            "source": "proteins.csv",
+            "identifier": null,
+            "publication_date": null,
+            "owner_table": "proteins"
+          }
+        ],
+        "source_registry_used": [
+          {
+            "source": "domains.csv",
+            "source_category": "core_entity",
+            "source_description": "Canonical domain registry connecting proteins, sources, and structures.",
+            "upstream_pipeline": "normalized.schema_tables.domains",
+            "quality_notes": "Core join table for domain-centric retrieval.",
+            "owner_table": "domains"
+          },
+          {
+            "source": "protein_cards_v2.jsonl",
+            "source_category": "aggregate_jsonl",
+            "source_description": "Protein-level synthesized cards for the v2 FBBP formal build.",
+            "upstream_pipeline": "llm-rag-knowledge-base/data/schema_tables_rag_ready/protein_cards_v2.jsonl",
+            "quality_notes": "Use for high-level protein summaries; underlying evidence should still be traced to table rows when possible.",
+            "owner_table": "protein_cards_v2"
+          },
+          {
+            "source": "interaction_cards_v2.jsonl",
+            "source_category": "aggregate_jsonl",
+            "source_description": "Interaction-level synthesized cards for the v2 FBBP formal build.",
+            "upstream_pipeline": "llm-rag-knowledge-base/data/schema_tables_rag_ready/interaction_cards_v2.jsonl",
+            "quality_notes": "Use for high-level interaction summaries; underlying evidence should still be traced to table rows when possible.",
+            "owner_table": "interaction_cards_v2"
+          },
+          {
+            "source": "plmsearch_results.csv",
+            "source_category": "structure_screen",
+            "source_description": "Protein language model similarity search outputs for protein rows.",
+            "upstream_pipeline": "normalized.schema_tables.plmsearch_results",
+            "quality_notes": "High-volume computational retrieval table frequently used in provenance inspection.",
+            "owner_table": "plmsearch_results"
+          },
+          {
+            "source": "proteins.csv",
+            "source_category": "core_entity",
+            "source_description": "Canonical protein entity table for the FBBP corpus.",
+            "upstream_pipeline": "normalized.schema_tables.proteins",
+            "quality_notes": "Primary protein registry table used by many joins.",
+            "owner_table": "proteins"
+          }
+        ],
+        "dataset_profile": {
+          "class_count": 12,
+          "classes": [
+            {
+              "scaffold": "adnectin",
+              "count": 456,
+              "target_rows": 37,
+              "top_targets": [
+                [
+                  "CD8A",
+                  16
+                ],
+                [
+                  "EGFR",
+                  11
+                ],
+                [
+                  "ICAM-2",
+                  4
+                ],
+                [
+                  "TNFRSF9",
+                  3
+                ],
+                [
+                  "c-Met",
+                  2
+                ],
+                [
+                  "MAP2K5",
+                  1
+                ]
+              ],
+              "interaction_classes": [
+                [
+                  "protein-protein",
+                  15
+                ],
+                [
+                  "EGFR",
+                  5
+                ],
+                [
+                  "Fc gamma receptor IIA (FcγRIIA)",
+                  2
+                ],
+                [
+                  "PD-L1",
+                  1
+                ]
+              ],
+              "evidence_tables": [
+                [
+                  "interactions",
+                  456
+                ],
+                [
+                  "domains",
+                  456
+                ],
+                [
+                  "proteins",
+                  456
+                ],
+                [
+                  "affinity_data",
+                  456
+                ],
+                [
+                  "target_species_variants",
+                  37
+                ],
+                [
+                  "targets_conceptual",
+                  37
+                ],
+                [
+                  "sources",
+                  31
+                ]
+              ]
+            },
+            {
+              "scaffold": "cyclotide",
+              "count": 404,
+              "target_rows": 2,
+              "top_targets": [
+                [
+                  "OPRK1",
+                  2
+                ]
+              ],
+              "interaction_classes": [
+                [
+                  "protein-protein interaction inhibitor",
+                  3
+                ],
+                [
+                  "GPCR",
+                  2
+                ]
+              ],
+              "evidence_tables": [
+                [
+                  "interactions",
+                  404
+                ],
+                [
+                  "domains",
+                  404
+                ],
+                [
+                  "proteins",
+                  404
+                ],
+                [
+                  "affinity_data",
+                  404
+                ],
+                [
+                  "sources",
+                  10
+                ],
+                [
+                  "target_species_variants",
+                  2
+                ],
+                [
+                  "targets_conceptual",
+                  2
+                ]
+              ]
+            },
+            {
+              "scaffold": "knottin",
+              "count": 310,
+              "target_rows": 1,
+              "top_targets": [
+                [
+                  "SCN9A",
+                  1
+                ]
+              ],
+              "interaction_classes": [
+                [
+                  "Integrin binding",
+                  2
+                ],
+                [
+                  "antagonist",
+                  1
+                ]
+              ],
+              "evidence_tables": [
+                [
+                  "interactions",
+                  310
+                ],
+                [
+                  "domains",
+                  310
+                ],
+                [
+                  "proteins",
+                  310
+                ],
+                [
+                  "affinity_data",
+                  310
+                ],
+                [
+                  "sources",
+                  74
+                ],
+                [
+                  "target_species_variants",
+                  1
+                ],
+                [
+                  "targets_conceptual",
+                  1
+                ]
+              ]
+            },
+            {
+              "scaffold": "obody",
+              "count": 268,
+              "target_rows": 0,
+              "top_targets": [],
+              "interaction_classes": [],
+              "evidence_tables": [
+                [
+                  "interactions",
+                  268
+                ],
+                [
+                  "domains",
+                  268
+                ],
+                [
+                  "proteins",
+                  268
+                ],
+                [
+                  "affinity_data",
+                  268
+                ],
+                [
+                  "sources",
+                  5
+                ]
+              ]
+            },
+            {
+              "scaffold": "kunitz",
+              "count": 161,
+              "target_rows": 0,
+              "top_targets": [],
+              "interaction_classes": [
+                [
+                  "trypsin",
+                  6
+                ],
+                [
+                  "Protease inhibitor",
+                  5
+                ],
+                [
+                  "serine protease inhibitor",
+                  3
+                ],
+                [
+                  "Matriptase",
+                  2
+                ],
+                [
+                  "Trypsin",
+                  1
+                ]
+              ],
+              "evidence_tables": [
+                [
+                  "interactions",
+                  161
+                ],
+                [
+                  "domains",
+                  161
+                ],
+                [
+                  "proteins",
+                  161
+                ],
+                [
+                  "affinity_data",
+                  161
+                ],
+                [
+                  "sources",
+                  6
+                ]
+              ]
+            },
+            {
+              "scaffold": "centyrin",
+              "count": 73,
+              "target_rows": 0,
+              "top_targets": [],
+              "interaction_classes": [],
+              "evidence_tables": [
+                [
+                  "interactions",
+                  73
+                ],
+                [
+                  "domains",
+                  73
+                ],
+                [
+                  "proteins",
+                  73
+                ],
+                [
+                  "affinity_data",
+                  73
+                ]
+              ]
+            },
+            {
+              "scaffold": "affimer",
+              "count": 69,
+              "target_rows": 1,
+              "top_targets": [
+                [
+                  "ALB",
+                  1
+                ]
+              ],
+              "interaction_classes": [
+                [
+                  "Albumin binding",
+                  1
+                ],
+                [
+                  "protein-protein",
+                  1
+                ]
+              ],
+              "evidence_tables": [
+                [
+                  "interactions",
+                  69
+                ],
+                [
+                  "domains",
+                  69
+                ],
+                [
+                  "proteins",
+                  69
+                ],
+                [
+                  "affinity_data",
+                  69
+                ],
+                [
+                  "target_species_variants",
+                  1
+                ],
+                [
+                  "targets_conceptual",
+                  1
+                ]
+              ]
+            },
+            {
+              "scaffold": "EVH1domain",
+              "count": 68,
+              "target_rows": 0,
+              "top_targets": [],
+              "interaction_classes": [],
+              "evidence_tables": [
+                [
+                  "interactions",
+                  68
+                ],
+                [
+                  "domains",
+                  68
+                ],
+                [
+                  "proteins",
+                  68
+                ],
+                [
+                  "affinity_data",
+                  68
+                ]
+              ]
+            },
+            {
+              "scaffold": "betarolldomain",
+              "count": 65,
+              "target_rows": 0,
+              "top_targets": [],
+              "interaction_classes": [],
+              "evidence_tables": [
+                [
+                  "interactions",
+                  65
+                ],
+                [
+                  "domains",
+                  65
+                ],
+                [
+                  "proteins",
+                  65
+                ],
+                [
+                  "affinity_data",
+                  65
+                ],
+                [
+                  "sources",
+                  4
+                ]
+              ]
+            },
+            {
+              "scaffold": "phdfingerdomain",
+              "count": 53,
+              "target_rows": 0,
+              "top_targets": [],
+              "interaction_classes": [
+                [
+                  "histone H3",
+                  1
+                ],
+                [
+                  "Binding",
+                  1
+                ]
+              ],
+              "evidence_tables": [
+                [
+                  "interactions",
+                  53
+                ],
+                [
+                  "domains",
+                  53
+                ],
+                [
+                  "proteins",
+                  53
+                ],
+                [
+                  "affinity_data",
+                  53
+                ],
+                [
+                  "sources",
+                  5
+                ]
+              ]
+            },
+            {
+              "scaffold": "avimer",
+              "count": 42,
+              "target_rows": 0,
+              "top_targets": [],
+              "interaction_classes": [],
+              "evidence_tables": [
+                [
+                  "interactions",
+                  42
+                ],
+                [
+                  "domains",
+                  42
+                ],
+                [
+                  "proteins",
+                  42
+                ],
+                [
+                  "affinity_data",
+                  42
+                ]
+              ]
+            },
+            {
+              "scaffold": "Ibody",
+              "count": 27,
+              "target_rows": 0,
+              "top_targets": [],
+              "interaction_classes": [
+                [
+                  "Protein-protein",
+                  2
+                ],
+                [
+                  "GPCR binding",
+                  1
+                ]
+              ],
+              "evidence_tables": [
+                [
+                  "interactions",
+                  27
+                ],
+                [
+                  "domains",
+                  27
+                ],
+                [
+                  "proteins",
+                  27
+                ],
+                [
+                  "affinity_data",
+                  27
+                ],
+                [
+                  "sources",
+                  5
+                ]
+              ]
+            }
+          ],
+          "by_scaffold": {
+            "adnectin": {
+              "scaffold": "adnectin",
+              "count": 456,
+              "target_rows": 37,
+              "top_targets": [
+                [
+                  "CD8A",
+                  16
+                ],
+                [
+                  "EGFR",
+                  11
+                ],
+                [
+                  "ICAM-2",
+                  4
+                ],
+                [
+                  "TNFRSF9",
+                  3
+                ],
+                [
+                  "c-Met",
+                  2
+                ],
+                [
+                  "MAP2K5",
+                  1
+                ]
+              ],
+              "interaction_classes": [
+                [
+                  "protein-protein",
+                  15
+                ],
+                [
+                  "EGFR",
+                  5
+                ],
+                [
+                  "Fc gamma receptor IIA (FcγRIIA)",
+                  2
+                ],
+                [
+                  "PD-L1",
+                  1
+                ]
+              ],
+              "evidence_tables": [
+                [
+                  "interactions",
+                  456
+                ],
+                [
+                  "domains",
+                  456
+                ],
+                [
+                  "proteins",
+                  456
+                ],
+                [
+                  "affinity_data",
+                  456
+                ],
+                [
+                  "target_species_variants",
+                  37
+                ],
+                [
+                  "targets_conceptual",
+                  37
+                ],
+                [
+                  "sources",
+                  31
+                ]
+              ]
+            },
+            "cyclotide": {
+              "scaffold": "cyclotide",
+              "count": 404,
+              "target_rows": 2,
+              "top_targets": [
+                [
+                  "OPRK1",
+                  2
+                ]
+              ],
+              "interaction_classes": [
+                [
+                  "protein-protein interaction inhibitor",
+                  3
+                ],
+                [
+                  "GPCR",
+                  2
+                ]
+              ],
+              "evidence_tables": [
+                [
+                  "interactions",
+                  404
+                ],
+                [
+                  "domains",
+                  404
+                ],
+                [
+                  "proteins",
+                  404
+                ],
+                [
+                  "affinity_data",
+                  404
+                ],
+                [
+                  "sources",
+                  10
+                ],
+                [
+                  "target_species_variants",
+                  2
+                ],
+                [
+                  "targets_conceptual",
+                  2
+                ]
+              ]
+            },
+            "knottin": {
+              "scaffold": "knottin",
+              "count": 310,
+              "target_rows": 1,
+              "top_targets": [
+                [
+                  "SCN9A",
+                  1
+                ]
+              ],
+              "interaction_classes": [
+                [
+                  "Integrin binding",
+                  2
+                ],
+                [
+                  "antagonist",
+                  1
+                ]
+              ],
+              "evidence_tables": [
+                [
+                  "interactions",
+                  310
+                ],
+                [
+                  "domains",
+                  310
+                ],
+                [
+                  "proteins",
+                  310
+                ],
+                [
+                  "affinity_data",
+                  310
+                ],
+                [
+                  "sources",
+                  74
+                ],
+                [
+                  "target_species_variants",
+                  1
+                ],
+                [
+                  "targets_conceptual",
+                  1
+                ]
+              ]
+            },
+            "obody": {
+              "scaffold": "obody",
+              "count": 268,
+              "target_rows": 0,
+              "top_targets": [],
+              "interaction_classes": [],
+              "evidence_tables": [
+                [
+                  "interactions",
+                  268
+                ],
+                [
+                  "domains",
+                  268
+                ],
+                [
+                  "proteins",
+                  268
+                ],
+                [
+                  "affinity_data",
+                  268
+                ],
+                [
+                  "sources",
+                  5
+                ]
+              ]
+            },
+            "kunitz": {
+              "scaffold": "kunitz",
+              "count": 161,
+              "target_rows": 0,
+              "top_targets": [],
+              "interaction_classes": [
+                [
+                  "trypsin",
+                  6
+                ],
+                [
+                  "Protease inhibitor",
+                  5
+                ],
+                [
+                  "serine protease inhibitor",
+                  3
+                ],
+                [
+                  "Matriptase",
+                  2
+                ],
+                [
+                  "Trypsin",
+                  1
+                ]
+              ],
+              "evidence_tables": [
+                [
+                  "interactions",
+                  161
+                ],
+                [
+                  "domains",
+                  161
+                ],
+                [
+                  "proteins",
+                  161
+                ],
+                [
+                  "affinity_data",
+                  161
+                ],
+                [
+                  "sources",
+                  6
+                ]
+              ]
+            },
+            "centyrin": {
+              "scaffold": "centyrin",
+              "count": 73,
+              "target_rows": 0,
+              "top_targets": [],
+              "interaction_classes": [],
+              "evidence_tables": [
+                [
+                  "interactions",
+                  73
+                ],
+                [
+                  "domains",
+                  73
+                ],
+                [
+                  "proteins",
+                  73
+                ],
+                [
+                  "affinity_data",
+                  73
+                ]
+              ]
+            },
+            "affimer": {
+              "scaffold": "affimer",
+              "count": 69,
+              "target_rows": 1,
+              "top_targets": [
+                [
+                  "ALB",
+                  1
+                ]
+              ],
+              "interaction_classes": [
+                [
+                  "Albumin binding",
+                  1
+                ],
+                [
+                  "protein-protein",
+                  1
+                ]
+              ],
+              "evidence_tables": [
+                [
+                  "interactions",
+                  69
+                ],
+                [
+                  "domains",
+                  69
+                ],
+                [
+                  "proteins",
+                  69
+                ],
+                [
+                  "affinity_data",
+                  69
+                ],
+                [
+                  "target_species_variants",
+                  1
+                ],
+                [
+                  "targets_conceptual",
+                  1
+                ]
+              ]
+            },
+            "evh1domain": {
+              "scaffold": "EVH1domain",
+              "count": 68,
+              "target_rows": 0,
+              "top_targets": [],
+              "interaction_classes": [],
+              "evidence_tables": [
+                [
+                  "interactions",
+                  68
+                ],
+                [
+                  "domains",
+                  68
+                ],
+                [
+                  "proteins",
+                  68
+                ],
+                [
+                  "affinity_data",
+                  68
+                ]
+              ]
+            },
+            "betarolldomain": {
+              "scaffold": "betarolldomain",
+              "count": 65,
+              "target_rows": 0,
+              "top_targets": [],
+              "interaction_classes": [],
+              "evidence_tables": [
+                [
+                  "interactions",
+                  65
+                ],
+                [
+                  "domains",
+                  65
+                ],
+                [
+                  "proteins",
+                  65
+                ],
+                [
+                  "affinity_data",
+                  65
+                ],
+                [
+                  "sources",
+                  4
+                ]
+              ]
+            },
+            "phdfingerdomain": {
+              "scaffold": "phdfingerdomain",
+              "count": 53,
+              "target_rows": 0,
+              "top_targets": [],
+              "interaction_classes": [
+                [
+                  "histone H3",
+                  1
+                ],
+                [
+                  "Binding",
+                  1
+                ]
+              ],
+              "evidence_tables": [
+                [
+                  "interactions",
+                  53
+                ],
+                [
+                  "domains",
+                  53
+                ],
+                [
+                  "proteins",
+                  53
+                ],
+                [
+                  "affinity_data",
+                  53
+                ],
+                [
+                  "sources",
+                  5
+                ]
+              ]
+            },
+            "avimer": {
+              "scaffold": "avimer",
+              "count": 42,
+              "target_rows": 0,
+              "top_targets": [],
+              "interaction_classes": [],
+              "evidence_tables": [
+                [
+                  "interactions",
+                  42
+                ],
+                [
+                  "domains",
+                  42
+                ],
+                [
+                  "proteins",
+                  42
+                ],
+                [
+                  "affinity_data",
+                  42
+                ]
+              ]
+            },
+            "ibody": {
+              "scaffold": "Ibody",
+              "count": 27,
+              "target_rows": 0,
+              "top_targets": [],
+              "interaction_classes": [
+                [
+                  "Protein-protein",
+                  2
+                ],
+                [
+                  "GPCR binding",
+                  1
+                ]
+              ],
+              "evidence_tables": [
+                [
+                  "interactions",
+                  27
+                ],
+                [
+                  "domains",
+                  27
+                ],
+                [
+                  "proteins",
+                  27
+                ],
+                [
+                  "affinity_data",
+                  27
+                ],
+                [
+                  "sources",
+                  5
+                ]
+              ]
+            }
+          }
+        },
+        "limitations": [],
+        "provenance_caveats": []
+      }
+    },
+    "provenance": {
+      "record_type": null,
+      "filter_summary": [],
+      "answer_mode": "extractive",
+      "dataset_version": "fbbp_private_v2026_04",
+      "runtime_profile": "local_formal",
+      "formal_db_mode": "reuse_prepared_full_formal_db",
+      "db_identity": "fbbp_formal_pgvector",
+      "build_id": "fbbp-2026-04-formal",
+      "source_registry_version": "2026-04-16",
+      "retrieval_count": 5,
+      "sources": [
+        "domains.csv",
+        "protein_cards_v2.jsonl",
+        "interaction_cards_v2.jsonl",
+        "plmsearch_results.csv",
+        "proteins.csv"
+      ]
+    },
+    "diagnostics": {
+      "latency_ms": 26729.29,
+      "worker_action": "search_knowledge",
+      "cache_enabled": true
+    },
+    "error": null
+  },
+  "source_summary": {
+    "ok": true,
+    "tool": "get_source_summary",
+    "contract_version": "1.1",
+    "request": {
+      "source": "domains.csv",
+      "limit": 5
+    },
+    "result": {
+      "found": false,
+      "source": "domains.csv",
+      "source_registry": {
+        "source_category": "core_entity",
+        "source_description": "Canonical domain registry connecting proteins, sources, and structures.",
+        "upstream_pipeline": "normalized.schema_tables.domains",
+        "quality_notes": "Core join table for domain-centric retrieval.",
+        "owner_table": "domains"
+      }
+    },
+    "provenance": {
+      "source": "domains.csv",
+      "dataset_version": "fbbp_private_v2026_04",
+      "runtime_profile": "local_formal",
+      "formal_db_mode": "reuse_prepared_full_formal_db",
+      "db_identity": "fbbp_formal_pgvector",
+      "build_id": "fbbp-2026-04-formal",
+      "source_registry_version": "2026-04-16"
+    },
+    "diagnostics": {
+      "latency_ms": 5163.24,
+      "worker_action": "get_source_summary"
+    },
+    "error": null
+  },
+  "chunk": {
+    "ok": true,
+    "tool": "get_document_chunk",
+    "contract_version": "1.1",
+    "request": {
+      "source": "domains.csv",
+      "chunk_id": "domains:TBP-00459"
+    },
+    "result": {
+      "found": true,
+      "source": "domains.csv",
+      "chunk_id": "domains:TBP-00459",
+      "content": "Table: domains\nPrimary Key: domain_id = TBP-00459\nProtein Id: PROT-00459\nDomain Name: VEGF_CKP9.63\nSequence: GCDVMQPYWGCKQDSDCLAGCVCHWYNSCG\nIs Engineered: Yes\nScaffold Type: knottin\nDevelopment Stage: Unknown",
+      "metadata": {
+        "record_type": "jsonl"
+      }
+    },
+    "provenance": {
+      "source": "domains.csv",
+      "chunk_id": "domains:TBP-00459",
+      "dataset_version": "fbbp_private_v2026_04",
+      "runtime_profile": "local_formal",
+      "formal_db_mode": "reuse_prepared_full_formal_db",
+      "db_identity": "fbbp_formal_pgvector",
+      "build_id": "fbbp-2026-04-formal",
+      "source_registry_version": "2026-04-16"
+    },
+    "diagnostics": {
+      "latency_ms": 5124.41,
+      "worker_action": "get_document_chunk"
+    },
+    "error": null
+  },
+  "formal_checks": {
+    "contract_version": "1.1",
+    "dataset_version": "fbbp_private_v2026_04",
+    "runtime_profile": "local_formal",
+    "db_identity": "fbbp_formal_pgvector",
+    "build_id": "fbbp-2026-04-formal",
+    "source_registry_version": "2026-04-16",
+    "result_count": 5
+  }
+}
+

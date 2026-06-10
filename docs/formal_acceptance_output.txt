@@ -1,0 +1,7 @@
+test_health_status_exposes_formal_handshake_fields (test_formal_handshake.FormalHandshakeAcceptanceTests.test_health_status_exposes_formal_handshake_fields) ... ok
+test_get_document_chunk_provenance_is_sufficient_for_formal_evidence (test_formal_provenance.FormalProvenanceAcceptanceTests.test_get_document_chunk_provenance_is_sufficient_for_formal_evidence) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.002s
+
+OK

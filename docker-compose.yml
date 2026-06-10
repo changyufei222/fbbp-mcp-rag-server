@@ -1,0 +1,22 @@
+name: fbbp-mcp-rag-server
+
+services:
+  mcp-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: fbbp-mcp-rag-server
+    environment:
+      FBBP_PROJECT_ROOT: /app
+      FBBP_FORMAL_DATASET_VERSION: fbbp_private_v2026_04
+      FBBP_FORMAL_RUNTIME_PROFILE: container_mcp
+      FBBP_MCP_DEFAULT_ANSWER_MODE: extractive
+      FBBP_SCI_RETRY_ATTEMPTS: "1"
+      FBBP_SCI_MIN_INTERVAL_SECONDS: "0"
+    ports:
+      - "8000:8000"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/mcp', timeout=5)"]
+      interval: 15s
+      timeout: 8s
+      retries: 10

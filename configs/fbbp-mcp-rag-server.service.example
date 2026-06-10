@@ -1,0 +1,16 @@
+[Unit]
+Description=FBBP MCP RAG Server
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/fbbp-mcp-rag-server
+EnvironmentFile=/opt/fbbp-mcp-rag-server/configs/production.example.env
+ExecStart=/opt/fbbp-mcp-rag-server/.venv/bin/python server.py --transport streamable-http --host 0.0.0.0 --port 8000
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target

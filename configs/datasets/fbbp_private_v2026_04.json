@@ -1,0 +1,294 @@
+{
+  "dataset_version": "fbbp_private_v2026_04",
+  "label": "FBBP private formal dataset April 2026",
+  "notes": "Canonical formal descriptor for the real FBBP runtime used by MCP, DeerFlow, and formal acceptance flows.",
+  "formal_db_mode": "reuse_prepared_full_formal_db",
+  "db_identity": "fbbp_formal_pgvector",
+  "build_id": "fbbp-2026-04-formal",
+  "source_registry_version": "2026-04-16",
+  "primary_sources": [
+    "raw_records.jsonl",
+    "protein_cards_v2.jsonl",
+    "interaction_cards_v2.jsonl"
+  ],
+  "formal_snapshot": {
+    "root": "formal_snapshots/fbbp_private_v2026_04",
+    "notes": "Runtime and explicit formal rebuilds use this repo-local fixed snapshot. Sync from llm-rag-knowledge-base only through the dedicated snapshot refresh command.",
+    "files": [
+      "formal_snapshots/fbbp_private_v2026_04/raw_records.jsonl",
+      "formal_snapshots/fbbp_private_v2026_04/protein_cards_v2.jsonl",
+      "formal_snapshots/fbbp_private_v2026_04/interaction_cards_v2.jsonl"
+    ]
+  },
+  "statistics": {
+    "table_count": 31,
+    "raw_record_count": 86564,
+    "protein_card_v2_count": 1996,
+    "interaction_card_v2_count": 1996,
+    "relationship_count": 15
+  },
+  "rebuild": {
+    "mode": "explicit_only",
+    "upstream_root": "<local_path_removed>",
+    "dataset_ready_root": "<local_path_removed>",
+    "source_allowlist": [
+      "formal_snapshots/fbbp_private_v2026_04/raw_records.jsonl",
+      "formal_snapshots/fbbp_private_v2026_04/protein_cards_v2.jsonl",
+      "formal_snapshots/fbbp_private_v2026_04/interaction_cards_v2.jsonl"
+    ],
+    "upstream_source_allowlist": [
+      "<local_path_removed>",
+      "<local_path_removed>",
+      "<local_path_removed>"
+    ],
+    "build_scripts": [
+      "<local_path_removed>",
+      "<local_path_removed>",
+      "<local_path_removed>"
+    ],
+    "notes": "Default smoke and acceptance reuse the prepared formal DB. Explicit rebuild commands rebuild from the repo-local formal snapshot; use the dedicated sync command if you want to refresh that snapshot from the canonical llm-rag-knowledge-base exports."
+  },
+  "source_registry": {
+    "raw_records.jsonl": {
+      "source_category": "aggregate_jsonl",
+      "source_description": "Full-table FBBP raw record export used to preserve per-table provenance during retrieval.",
+      "upstream_pipeline": "llm-rag-knowledge-base/data/schema_tables_rag_ready/raw_records.jsonl",
+      "runtime_snapshot": "formal_snapshots/fbbp_private_v2026_04/raw_records.jsonl",
+      "quality_notes": "Canonical formal export covering all normalized FBBP tables.",
+      "owner_table": "multi_table_export"
+    },
+    "protein_cards_v2.jsonl": {
+      "source_category": "aggregate_jsonl",
+      "source_description": "Protein-level synthesized cards for the v2 FBBP formal build.",
+      "upstream_pipeline": "llm-rag-knowledge-base/data/schema_tables_rag_ready/protein_cards_v2.jsonl",
+      "runtime_snapshot": "formal_snapshots/fbbp_private_v2026_04/protein_cards_v2.jsonl",
+      "quality_notes": "Use for high-level protein summaries; underlying evidence should still be traced to table rows when possible.",
+      "owner_table": "protein_cards_v2"
+    },
+    "interaction_cards_v2.jsonl": {
+      "source_category": "aggregate_jsonl",
+      "source_description": "Interaction-level synthesized cards for the v2 FBBP formal build.",
+      "upstream_pipeline": "llm-rag-knowledge-base/data/schema_tables_rag_ready/interaction_cards_v2.jsonl",
+      "runtime_snapshot": "formal_snapshots/fbbp_private_v2026_04/interaction_cards_v2.jsonl",
+      "quality_notes": "Use for high-level interaction summaries; underlying evidence should still be traced to table rows when possible.",
+      "owner_table": "interaction_cards_v2"
+    },
+    "affinity_data.csv": {
+      "source_category": "interaction_measurement",
+      "source_description": "Affinity assay rows attached to interaction identifiers.",
+      "upstream_pipeline": "normalized.schema_tables.affinity_data",
+      "quality_notes": "Measured binding values with method and unit context.",
+      "owner_table": "affinity_data"
+    },
+    "bcell_epitope_results.csv": {
+      "source_category": "immunogenicity",
+      "source_description": "B-cell epitope predictions and supporting sequence-level annotations.",
+      "upstream_pipeline": "normalized.schema_tables.bcell_epitope_results",
+      "quality_notes": "Sequence-derived computational result table; interpret alongside model assumptions.",
+      "owner_table": "bcell_epitope_results"
+    },
+    "cmc_data.csv": {
+      "source_category": "developability",
+      "source_description": "CMC-oriented domain developability descriptors.",
+      "upstream_pipeline": "normalized.schema_tables.cmc_data",
+      "quality_notes": "Formal developability table linked through domain identifiers.",
+      "owner_table": "cmc_data"
+    },
+    "developability_results.csv": {
+      "source_category": "developability",
+      "source_description": "Integrated developability summary outputs for FBBP proteins.",
+      "upstream_pipeline": "normalized.schema_tables.developability_results",
+      "quality_notes": "Aggregate computational assessment; review together with source component tables.",
+      "owner_table": "developability_results"
+    },
+    "digestive_assays.csv": {
+      "source_category": "developability",
+      "source_description": "Digestive stability assay outcomes linked to domains.",
+      "upstream_pipeline": "normalized.schema_tables.digestive_assays",
+      "quality_notes": "Experimental assay rows with limited coverage relative to the full corpus.",
+      "owner_table": "digestive_assays"
+    },
+    "domains.csv": {
+      "source_category": "core_entity",
+      "source_description": "Canonical domain registry connecting proteins, sources, and structures.",
+      "upstream_pipeline": "normalized.schema_tables.domains",
+      "quality_notes": "Core join table for domain-centric retrieval.",
+      "owner_table": "domains"
+    },
+    "ecoli_expression_results.csv": {
+      "source_category": "developability",
+      "source_description": "E. coli expression outputs for FBBP proteins.",
+      "upstream_pipeline": "normalized.schema_tables.ecoli_expression_results",
+      "quality_notes": "Experimental expression readout; coverage is narrower than the full protein table.",
+      "owner_table": "ecoli_expression_results"
+    },
+    "foldseek_results.csv": {
+      "source_category": "structure_screen",
+      "source_description": "Foldseek-based structural similarity search outputs.",
+      "upstream_pipeline": "normalized.schema_tables.foldseek_results",
+      "quality_notes": "Structure-search results; interpret together with rank and template context.",
+      "owner_table": "foldseek_results"
+    },
+    "functional_annotations.csv": {
+      "source_category": "annotation",
+      "source_description": "Functional annotations linked to protein identifiers.",
+      "upstream_pipeline": "normalized.schema_tables.functional_annotations",
+      "quality_notes": "Curated or normalized function notes with partial coverage.",
+      "owner_table": "functional_annotations"
+    },
+    "immunogenicity_summary.csv": {
+      "source_category": "immunogenicity",
+      "source_description": "Integrated immunogenicity summary rows for proteins.",
+      "upstream_pipeline": "normalized.schema_tables.immunogenicity_summary",
+      "quality_notes": "Summary layer that should be checked against constituent immunogenicity tables for exact evidence.",
+      "owner_table": "immunogenicity_summary"
+    },
+    "interactions.csv": {
+      "source_category": "core_entity",
+      "source_description": "Canonical interaction table linking domains, targets, and sources.",
+      "upstream_pipeline": "normalized.schema_tables.interactions",
+      "quality_notes": "Primary interaction anchor table for downstream affinity and source joins.",
+      "owner_table": "interactions"
+    },
+    "loop_annotations.csv": {
+      "source_category": "structure_screen",
+      "source_description": "Loop annotation outputs keyed by protein row identifiers.",
+      "upstream_pipeline": "normalized.schema_tables.loop_annotations",
+      "quality_notes": "Computational loop-annotation table used in provenance-focused reviews.",
+      "owner_table": "loop_annotations"
+    },
+    "loop_flexibility_results.csv": {
+      "source_category": "structure_screen",
+      "source_description": "Loop flexibility estimates for protein rows.",
+      "upstream_pipeline": "normalized.schema_tables.loop_flexibility_results",
+      "quality_notes": "Computational flexibility outputs intended for structural interpretation, not direct experimental claims.",
+      "owner_table": "loop_flexibility_results"
+    },
+    "manual_review_audit.csv": {
+      "source_category": "quality_control",
+      "source_description": "Manual audit trace rows for curated FBBP entries.",
+      "upstream_pipeline": "normalized.schema_tables.manual_review_audit",
+      "quality_notes": "Audit trail table supporting provenance and QC review.",
+      "owner_table": "manual_review_audit"
+    },
+    "mhci_results.csv": {
+      "source_category": "immunogenicity",
+      "source_description": "MHC-I presentation predictions for protein rows.",
+      "upstream_pipeline": "normalized.schema_tables.mhci_results",
+      "quality_notes": "Model-derived immunogenicity signal; compare with companion tables for consistency.",
+      "owner_table": "mhci_results"
+    },
+    "mhcii_results.csv": {
+      "source_category": "immunogenicity",
+      "source_description": "MHC-II presentation predictions for protein rows.",
+      "upstream_pipeline": "normalized.schema_tables.mhcii_results",
+      "quality_notes": "Model-derived immunogenicity signal; compare with companion tables for consistency.",
+      "owner_table": "mhcii_results"
+    },
+    "oral_results.csv": {
+      "source_category": "developability",
+      "source_description": "Oral-delivery-oriented developability outputs.",
+      "upstream_pipeline": "normalized.schema_tables.oral_results",
+      "quality_notes": "Derived developability signal that should be interpreted together with assay and CMC tables.",
+      "owner_table": "oral_results"
+    },
+    "pipeline_versions.csv": {
+      "source_category": "quality_control",
+      "source_description": "Pipeline version manifest for the formal FBBP build.",
+      "upstream_pipeline": "normalized.schema_tables.pipeline_versions",
+      "quality_notes": "Build metadata table for traceability rather than biological evidence.",
+      "owner_table": "pipeline_versions"
+    },
+    "plmsearch_results.csv": {
+      "source_category": "structure_screen",
+      "source_description": "Protein language model similarity search outputs for protein rows.",
+      "upstream_pipeline": "normalized.schema_tables.plmsearch_results",
+      "quality_notes": "High-volume computational retrieval table frequently used in provenance inspection.",
+      "owner_table": "plmsearch_results"
+    },
+    "protein_flexibility_summary.csv": {
+      "source_category": "structure_screen",
+      "source_description": "Protein-level flexibility summaries derived from structural analyses.",
+      "upstream_pipeline": "normalized.schema_tables.protein_flexibility_summary",
+      "quality_notes": "Summary table for flexibility interpretation; use constituent evidence for exact details.",
+      "owner_table": "protein_flexibility_summary"
+    },
+    "protein_identifiers.csv": {
+      "source_category": "core_entity",
+      "source_description": "Alternative identifier mapping table for proteins.",
+      "upstream_pipeline": "normalized.schema_tables.protein_identifiers",
+      "quality_notes": "Useful for alias resolution and entity normalization.",
+      "owner_table": "protein_identifiers"
+    },
+    "proteins.csv": {
+      "source_category": "core_entity",
+      "source_description": "Canonical protein entity table for the FBBP corpus.",
+      "upstream_pipeline": "normalized.schema_tables.proteins",
+      "quality_notes": "Primary protein registry table used by many joins.",
+      "owner_table": "proteins"
+    },
+    "protrek_results.csv": {
+      "source_category": "structure_screen",
+      "source_description": "ProtTrek-style retrieval outputs for protein rows.",
+      "upstream_pipeline": "normalized.schema_tables.protrek_results",
+      "quality_notes": "Computational retrieval result table; interpret with model and ranking context.",
+      "owner_table": "protrek_results"
+    },
+    "result_metadata.csv": {
+      "source_category": "quality_control",
+      "source_description": "Run-level metadata for generated result tables.",
+      "upstream_pipeline": "normalized.schema_tables.result_metadata",
+      "quality_notes": "Operational metadata table supporting build reproducibility.",
+      "owner_table": "result_metadata"
+    },
+    "sources.csv": {
+      "source_category": "source_provenance",
+      "source_description": "Canonical publication and citation source registry.",
+      "upstream_pipeline": "normalized.schema_tables.sources",
+      "quality_notes": "Primary provenance table for title, identifier, and publication date.",
+      "owner_table": "sources"
+    },
+    "structural_info.csv": {
+      "source_category": "structure_screen",
+      "source_description": "Structural reference and quality rows linked to domains.",
+      "upstream_pipeline": "normalized.schema_tables.structural_info",
+      "quality_notes": "Structure-centric evidence table for exact structural identifiers and metrics.",
+      "owner_table": "structural_info"
+    },
+    "structure_refinement_history.csv": {
+      "source_category": "structure_screen",
+      "source_description": "Refinement history rows for structure-related protein entries.",
+      "upstream_pipeline": "normalized.schema_tables.structure_refinement_history",
+      "quality_notes": "Operational structural refinement trail rather than direct biological effect evidence.",
+      "owner_table": "structure_refinement_history"
+    },
+    "target_species_variants.csv": {
+      "source_category": "target_context",
+      "source_description": "Species and variant-specific target table.",
+      "upstream_pipeline": "normalized.schema_tables.target_species_variants",
+      "quality_notes": "Target disambiguation table for interaction-level reasoning.",
+      "owner_table": "target_species_variants"
+    },
+    "targets_conceptual.csv": {
+      "source_category": "target_context",
+      "source_description": "Conceptual target registry for shared target identities.",
+      "upstream_pipeline": "normalized.schema_tables.targets_conceptual",
+      "quality_notes": "Use with target species variants for precise target interpretation.",
+      "owner_table": "targets_conceptual"
+    },
+    "ted_results.csv": {
+      "source_category": "structure_screen",
+      "source_description": "TED retrieval outputs for protein rows.",
+      "upstream_pipeline": "normalized.schema_tables.ted_results",
+      "quality_notes": "Computational retrieval result table with model-dependent ranking.",
+      "owner_table": "ted_results"
+    },
+    "trusted_source_qc.csv": {
+      "source_category": "quality_control",
+      "source_description": "Trusted-source QC summary for protein rows.",
+      "upstream_pipeline": "normalized.schema_tables.trusted_source_qc",
+      "quality_notes": "Quality-control table meant to support formal acceptance and provenance screening.",
+      "owner_table": "trusted_source_qc"
+    }
+  }
+}

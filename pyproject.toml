@@ -1,0 +1,21 @@
+[project]
+name = "fbbp-mcp-rag-server"
+version = "0.1.0"
+description = "MCP server exposing FBBP private knowledge via ragkb"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "mcp[cli]>=1.26.0",
+  "python-dotenv",
+]
+
+[project.scripts]
+fbbp-mcp-rag-server = "fbbp_mcp_server.server:main"
+fbtp-mcp-rag-server = "fbbp_mcp_server.server:main"
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]

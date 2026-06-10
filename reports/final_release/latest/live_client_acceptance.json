@@ -1,0 +1,280 @@
+{
+  "schema_version": "fbbp.mcp.live_acceptance.v1",
+  "created_at_utc": "2026-05-02T18:12:30.075858+00:00",
+  "ok": true,
+  "clients": [
+    {
+      "client": "codex",
+      "label": "Codex",
+      "transport": "http",
+      "config_path": "<local_path_removed>",
+      "config_exists": true,
+      "ok": true,
+      "tool_count": 14,
+      "tool_calls": [
+        {
+          "tool": "tool_contract_version",
+          "arguments": {},
+          "ok": true,
+          "is_error": false,
+          "latency_ms": 6.97,
+          "content_preview": "{\n  \"ok\": true,\n  \"tool\": \"tool_contract_version\",\n  \"contract_version\": \"1.1\",\n  \"request\": {},\n  \"result\": {\n    \"contract_version\": \"1.1\"\n  },\n  \"provenance\": {},\n  \"diagnostics\": {},\n  \"error\": null\n}",
+          "structured_keys": [
+            "contract_version",
+            "diagnostics",
+            "error",
+            "ok",
+            "provenance",
+            "request",
+            "result",
+            "tool"
+          ],
+          "error_code": null
+        },
+        {
+          "tool": "server_status",
+          "arguments": {},
+          "ok": true,
+          "is_error": false,
+          "latency_ms": 11332.52,
+          "content_preview": "{\n  \"ok\": true,\n  \"tool\": \"server_status\",\n  \"contract_version\": \"1.1\",\n  \"request\": {},\n  \"result\": {\n    \"status\": \"ok\",\n    \"pg_host\": \"localhost\",\n    \"pg_port\": 5432,\n    \"pg_db\": \"ragkb\",\n    \"pg_table\": \"rag_documents_bge_m3\",\n    \"e",
+          "structured_keys": [
+            "contract_version",
+            "diagnostics",
+            "error",
+            "ok",
+            "provenance",
+            "request",
+            "result",
+            "tool"
+          ],
+          "error_code": null
+        }
+      ],
+      "tool_names": [
+        "explain_search",
+        "get_document_chunk",
+        "get_pdb_entry",
+        "get_source_summary",
+        "get_uniprot_entry",
+        "health_status",
+        "ingest_sources",
+        "list_record_types",
+        "list_sources",
+        "preview_ingest",
+        "search_knowledge",
+        "search_pubmed",
+        "server_status",
+        "tool_contract_version"
+      ],
+      "latency_ms": 11447.21
+    },
+    {
+      "client": "claude_code",
+      "label": "Claude Code",
+      "transport": "http",
+      "config_path": "<local_path_removed>",
+      "config_exists": true,
+      "ok": true,
+      "tool_count": 14,
+      "tool_calls": [
+        {
+          "tool": "health_status",
+          "arguments": {},
+          "ok": true,
+          "is_error": false,
+          "latency_ms": 5121.26,
+          "content_preview": "{\n  \"ok\": true,\n  \"tool\": \"health_status\",\n  \"contract_version\": \"1.1\",\n  \"request\": {},\n  \"result\": {\n    \"runtime\": {\n      \"mode\": \"research-dev\",\n      \"env_path\": \"<local_path_removed>",\n      \"ragkb_status\": \"<local_path_removed>",
+          "structured_keys": [
+            "contract_version",
+            "diagnostics",
+            "error",
+            "ok",
+            "provenance",
+            "request",
+            "result",
+            "tool"
+          ],
+          "error_code": null
+        },
+        {
+          "tool": "list_record_types",
+          "arguments": {
+            "limit": 10
+          },
+          "ok": true,
+          "is_error": false,
+          "latency_ms": 20535.75,
+          "content_preview": "{\n  \"ok\": true,\n  \"tool\": \"list_record_types\",\n  \"contract_version\": \"1.1\",\n  \"request\": {\n    \"limit\": 10\n  },\n  \"result\": {\n    \"record_types\": [\n      {\n        \"record_type\": \"jsonl\",\n        \"source_count\": 10,\n        \"chunk_count\": 5",
+          "structured_keys": [
+            "contract_version",
+            "diagnostics",
+            "error",
+            "ok",
+            "provenance",
+            "request",
+            "result",
+            "tool"
+          ],
+          "error_code": null
+        }
+      ],
+      "tool_names": [
+        "explain_search",
+        "get_document_chunk",
+        "get_pdb_entry",
+        "get_source_summary",
+        "get_uniprot_entry",
+        "health_status",
+        "ingest_sources",
+        "list_record_types",
+        "list_sources",
+        "preview_ingest",
+        "search_knowledge",
+        "search_pubmed",
+        "server_status",
+        "tool_contract_version"
+      ],
+      "latency_ms": 25702.39
+    },
+    {
+      "client": "cursor",
+      "label": "Cursor",
+      "transport": "http",
+      "config_path": "<local_path_removed>",
+      "config_exists": true,
+      "ok": true,
+      "tool_count": 14,
+      "tool_calls": [
+        {
+          "tool": "list_sources",
+          "arguments": {
+            "limit": 5
+          },
+          "ok": true,
+          "is_error": false,
+          "latency_ms": 5153.8,
+          "content_preview": "{\n  \"ok\": true,\n  \"tool\": \"list_sources\",\n  \"contract_version\": \"1.1\",\n  \"request\": {\n    \"record_type\": null,\n    \"limit\": 5\n  },\n  \"result\": {\n    \"count\": 5,\n    \"record_type\": null,\n    \"sources\": [\n      {\n        \"source\": \"plmsearch_",
+          "structured_keys": [
+            "contract_version",
+            "diagnostics",
+            "error",
+            "ok",
+            "provenance",
+            "request",
+            "result",
+            "tool"
+          ],
+          "error_code": null
+        },
+        {
+          "tool": "get_source_summary",
+          "arguments": {
+            "source": "domains.csv",
+            "limit": 5
+          },
+          "ok": true,
+          "is_error": false,
+          "latency_ms": 19997.59,
+          "content_preview": "{\n  \"ok\": true,\n  \"tool\": \"get_source_summary\",\n  \"contract_version\": \"1.1\",\n  \"request\": {\n    \"source\": \"domains.csv\",\n    \"limit\": 5\n  },\n  \"result\": {\n    \"found\": false,\n    \"source\": \"domains.csv\",\n    \"source_registry\": {\n      \"sour",
+          "structured_keys": [
+            "contract_version",
+            "diagnostics",
+            "error",
+            "ok",
+            "provenance",
+            "request",
+            "result",
+            "tool"
+          ],
+          "error_code": null
+        }
+      ],
+      "tool_names": [
+        "explain_search",
+        "get_document_chunk",
+        "get_pdb_entry",
+        "get_source_summary",
+        "get_uniprot_entry",
+        "health_status",
+        "ingest_sources",
+        "list_record_types",
+        "list_sources",
+        "preview_ingest",
+        "search_knowledge",
+        "search_pubmed",
+        "server_status",
+        "tool_contract_version"
+      ],
+      "latency_ms": 25195.73
+    },
+    {
+      "client": "deerflow",
+      "label": "DeerFlow",
+      "transport": "stdio",
+      "config_path": "<local_path_removed>",
+      "config_exists": true,
+      "ok": true,
+      "tool_count": 14,
+      "tool_calls": [
+        {
+          "tool": "preview_ingest",
+          "arguments": {
+            "input_path": "<local_path_removed>"
+          },
+          "ok": true,
+          "is_error": false,
+          "latency_ms": 6.58,
+          "content_preview": "{\n  \"ok\": true,\n  \"tool\": \"preview_ingest\",\n  \"contract_version\": \"1.1\",\n  \"request\": {\n    \"input_path\": \"<local_path_removed>"\n  },\n  \"result\": {\n    \"exists\": true,\n    \"is_file\": false,\n    \"is_dir\": true,\n    \"file_count\":",
+          "structured_keys": [
+            "contract_version",
+            "diagnostics",
+            "error",
+            "ok",
+            "provenance",
+            "request",
+            "result",
+            "tool"
+          ],
+          "error_code": null
+        },
+        {
+          "tool": "server_status",
+          "arguments": {},
+          "ok": true,
+          "is_error": false,
+          "latency_ms": 5211.08,
+          "content_preview": "{\n  \"ok\": true,\n  \"tool\": \"server_status\",\n  \"contract_version\": \"1.1\",\n  \"request\": {},\n  \"result\": {\n    \"status\": \"ok\",\n    \"pg_host\": \"localhost\",\n    \"pg_port\": 5432,\n    \"pg_db\": \"ragkb\",\n    \"pg_table\": \"rag_documents_bge_m3\",\n    \"e",
+          "structured_keys": [
+            "contract_version",
+            "diagnostics",
+            "error",
+            "ok",
+            "provenance",
+            "request",
+            "result",
+            "tool"
+          ],
+          "error_code": null
+        }
+      ],
+      "tool_names": [
+        "explain_search",
+        "get_document_chunk",
+        "get_pdb_entry",
+        "get_source_summary",
+        "get_uniprot_entry",
+        "health_status",
+        "ingest_sources",
+        "list_record_types",
+        "list_sources",
+        "preview_ingest",
+        "search_knowledge",
+        "search_pubmed",
+        "server_status",
+        "tool_contract_version"
+      ],
+      "latency_ms": 5916.66
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+[
+  {
+    "status": "copied",
+    "source": "<local_path_removed>",
+    "relative_path": "README.md"
+  },
+  {
+    "status": "copied",
+    "source": "<local_path_removed>",
+    "relative_path": "FINAL_RESULT_SUMMARY.md"
+  },
+  {
+    "status": "copied",
+    "source": "<local_path_removed>",
+    "relative_path": "UPSTREAM.md"
+  },
+  {
+    "status": "copied",
+    "source": "<local_path_removed>",
+    "relative_path": "pyproject.toml"
+  },
+  {
+    "status": "copied",
+    "source": "<local_path_removed>",
+    "relative_path": "Dockerfile"
+  },
+  {
+    "status": "copied",
+    "source": "<local_path_removed>",
+    "relative_path": "docker-compose.yml"
+  },
+  {
+    "status": "copied",
+    "source": "<local_path_removed>",
+    "relative_path": "server.py"
+  },
+  {
+    "status": "copied",
+    "source": "<local_path_removed>",
+    "relative_path": "src"
+  },
+  {
+    "status": "copied",
+    "source": "<local_path_removed>",
+    "relative_path": "scripts"
+  },
+  {
+    "status": "copied",
+    "source": "<local_path_removed>",
+    "relative_path": "configs"
+  },
+  {
+    "status": "copied",
+    "source": "<local_path_removed>",
+    "relative_path": "docs"
+  },
+  {
+    "status": "copied",
+    "source": "<local_path_removed>",
+    "relative_path": "examples"
+  },
+  {
+    "status": "copied",
+    "source": "<local_path_removed>",
+    "relative_path": "tests"
+  },
+  {
+    "status": "copied",
+    "source": "<local_path_removed>",
+    "relative_path": "reports\\final_release"
+  },
+  {
+    "status": "copied",
+    "source": "<local_path_removed>",
+    "relative_path": "formal_snapshots\\README.md"
+  }
+]
