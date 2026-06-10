@@ -1,3 +1,5 @@
+> Interface guide: [English](./INTERFACE_GUIDE_EN.md) | [中文](./INTERFACE_GUIDE_CN.md)
+
 # FBBP MCP RAG Server for Coding Agents and AI IDEs
 
 An MCP-compatible retrieval server that exposes your private FBBP knowledge base to agents and AI IDEs, built as a thin formal knowledge service layer on top of `ragkb`.
