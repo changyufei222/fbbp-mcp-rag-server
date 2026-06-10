@@ -1,9 +1,24 @@
-> Interface guide: [English](./INTERFACE_GUIDE_EN.md) | [中文](./INTERFACE_GUIDE_CN.md)
+[**English**](./README.md) | [中文](./README_CN.md)
 
-# FBBP MCP RAG Server for Coding Agents and AI IDEs
+# FBBP MCP RAG Server
 
-An MCP-compatible retrieval server that exposes your private FBBP knowledge base to agents and AI IDEs, built as a thin formal knowledge service layer on top of `ragkb`.
+[![Repository quality](https://github.com/changyufei222/fbbp-mcp-rag-server/actions/workflows/repository-quality.yml/badge.svg)](https://github.com/changyufei222/fbbp-mcp-rag-server/actions/workflows/repository-quality.yml)
+[![Release](https://img.shields.io/github/v/release/changyufei222/fbbp-mcp-rag-server?display_name=tag)](https://github.com/changyufei222/fbbp-mcp-rag-server/releases)
+[![Citation](https://img.shields.io/badge/citation-CITATION.cff-2f6f9f.svg)](./CITATION.cff)
 
+An MCP-compatible, provenance-aware retrieval service connecting coding agents and AI IDEs to the FBBP knowledge stack.
+
+**Status:** Runnable service and formal snapshot contract | **Public release:** 2026-06-10
+
+| Start here | Resource |
+|---|---|
+| Primary documentation | [Five-minute path](./README.md#quick-start) |
+| Reproducibility / implementation | [Formal snapshots](./formal_snapshots/README.md) |
+| Verified outcomes | [Result summary](./FINAL_RESULT_SUMMARY.md) |
+
+![FBBP MCP RAG server interface](./docs/screenshots/frontend_home.png)
+
+---
 ## What This Repo Does
 - Exposes `ragkb` retrieval and ingest operations as MCP tools
 - Lets DeerFlow, Codex, Cursor, or Claude Code call your private knowledge base through MCP
@@ -330,7 +345,7 @@ Generated artifacts:
 
 ### Codex CLI
 - Example file: `examples/clients/codex.config.toml`
-- Drop the `mcp_servers.fbbp-rag` block into your `<local_path_removed>
+- Copy the `mcp_servers.fbbp-rag` block into your Codex CLI configuration file and adjust repository-local paths for your checkout.
 
 ### Cursor
 - Example file: `examples/clients/cursor.mcp.json`
@@ -395,18 +410,18 @@ Canonical portfolio summary:
 - `FINAL_RESULT_SUMMARY.md`
 
 ### Screenshots
-- Frontend showcase: `../fbbp-research-workbench/artifacts/20260418_140627_fbbp_formal_console/screenshots/fbbp_formal_console.png`
+- Frontend showcase: [FBBP formal console](https://github.com/changyufei222/fbbp-research-workbench/blob/main/artifacts/20260418_155831_fbbp_formal_console_v2/screenshots/fbbp_formal_console.png)
 - LangGraph docs: `docs/screenshots/langgraph_docs.png`
 - Gateway docs: `docs/screenshots/gateway_docs.png`
 
-![Frontend Showcase](../fbbp-research-workbench/artifacts/20260418_140627_fbbp_formal_console/screenshots/fbbp_formal_console.png)
+![Frontend Showcase](docs/screenshots/frontend_home.png)
 
 ### Acceptance Artifacts
 If you want the current end-to-end proof chain, check:
-- `../fbbp-research-workbench/artifacts/20260418_140627_fbbp_formal_console/summary.json`
-- `../fbbp-research-workbench/artifacts/20260418_140627_fbbp_formal_console/screenshots/fbbp_formal_console.png`
-- `../fbbp-research-workbench/batches/20260416_223355_weekly_validation_batch/formal_scoreboard.json`
-- `../fbbp-research-workbench/batches/20260416_223355_weekly_validation_batch/latest_successful_runs.md`
+- [`FINAL_RESULT_SUMMARY.md`](./FINAL_RESULT_SUMMARY.md)
+- [`formal_snapshots/README.md`](./formal_snapshots/README.md)
+- [FBBP formal console screenshot](https://github.com/changyufei222/fbbp-research-workbench/blob/main/artifacts/20260418_155831_fbbp_formal_console_v2/screenshots/fbbp_formal_console.png)
+- [FBBP Research Workbench result summary](https://github.com/changyufei222/fbbp-research-workbench/blob/main/FINAL_RESULT_SUMMARY.md)
 
 ## Recommended Setup with This Workspace
 - Keep the clean upstream RAG engine in `../llm-rag-knowledge-base`
@@ -433,4 +448,6 @@ If you want the current end-to-end proof chain, check:
 - This project is intentionally Python-first to stay aligned with your current `ragkb` codebase.
 - It references MCP design ideas, but does not inherit a TypeScript MCP server stack.
 - For the smoothest DeerFlow integration, use the dedicated virtual environment created by `scripts/bootstrap_local_env.ps1`.
+
+
 
